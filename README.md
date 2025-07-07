@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 FASE 1: Configuración inicial y MVP
 
-## Getting Started
+🔧 Configuración del proyecto
+    ✅ Crear proyecto con npx create-next-app@latest (App Router).
+    ✅ Configurar TailwindCSS para estilos.
+    ✅ Instalar dependencias útiles: react-hook-form, zod, @tanstack/react-query, axios, @auth/core (o next-auth si usas auth).
+    ✅ Configurar archivo .env con variables básicas.
 
-First, run the development server:
+🔐 Módulo de Autenticación
+    Página de Login (email/contraseña o código).
+    Middleware para proteger rutas privadas.
+    Persistencia de sesión con cookies o JWT.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📋 Módulo de Citas
+    Formulario para agendar cita (tipo de servicio, fecha, vehículo, cliente).
+    Página con lista de citas próximas.
+    CRUD completo de citas (crear, ver, editar, eliminar).
+    Validaciones con Zod y feedback al usuario.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👤 Módulo de Clientes
+    Registro de cliente con datos básicos.
+    Asociar vehículos al cliente.
+    Historial de servicios por cliente.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🚗 Módulo de Vehículos
+    Registrar vehículo con: placa, marca, modelo, año.
+    Asociar a cliente.
+    Mostrar en agenda de servicios.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🧾 Módulo de Servicios
+    Crear tipos de servicios (lavado, cambio de aceite, diagnóstico...).
+    Asignar servicios a cada cita.
+    Marcar servicio como completado.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+⚙️ FASE 2: Administración y funcionalidades adicionales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📊 Panel Administrativo
+    Dashboard con tarjetas: total clientes, citas del día, servicios completados.
+    Reporte de ingresos por mes.
+    Lista de empleados (opcional).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🔔 Notificaciones
+    Enviar email/SMS de confirmación de cita.
+    Recordatorio antes de la cita (opcional).
+    Notificación al completar un servicio.
 
-## Deploy on Vercel
+🧑‍🔧 Gestión de empleados (opcional)
+    Asignar empleado a un servicio.
+    Ver historial por empleado.
+    Roles: admin, mecánico, lavador.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📱 FASE 3: Extras y despliegue
+
+🌐 PWA (opcional)
+    Convertir la app en PWA para usar en móviles como si fuera una app nativa.
+
+🧾 Facturación
+    Generar factura por servicio.
+    Descargar como PDF.
+    Registrar pagos y deudas.
+
+☁️ Despliegue
+    Subir código a GitHub.
+    Deploy en Vercel.
+    Configurar dominio personalizado (opcional).
