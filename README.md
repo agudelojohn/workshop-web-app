@@ -65,3 +65,8 @@
     Subir código a GitHub.
     Deploy en Vercel.
     Configurar dominio personalizado (opcional).
+
+
+    Nota: Para inicial correr:
+    1. npm run prisma:generate
+    2. npm run prisma:push
