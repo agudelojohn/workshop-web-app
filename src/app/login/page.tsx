@@ -3,12 +3,14 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Icons } from "@/components/Icons/Icons";
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +26,10 @@ export default function LoginPage() {
       router.push("/dashboard"); // Redirige a un área protegida
     }
   };
+
+  function handleShowPassord() {
+    setShowPassword((prev) => !prev);
+  }
 
   return (
     <div className="h-full flex items-center justify-center">
@@ -71,17 +77,24 @@ export default function LoginPage() {
               </a>
             </div>
           </div>
-          <div className="mt-2">
+          <div className="mt-2 flex gap-2">
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               required
               autoComplete="current-password"
               className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
             />
+            <button
+              type="button"
+              onClick={handleShowPassord}
+              className="text-sm text-indigo-400 hover:text-indigo-300"
+            >
+              {showPassword ? <Icons name="opened-eye" /> : <Icons name="closed-eye" />}
+            </button>
           </div>
         </div>
 
